@@ -11,7 +11,7 @@ The main interest of this tool is to encode payloads for XSS vulnerabilities on 
 
 ## How to use it?
 
-```sh-session
+```bash
 $ python3 enc-ow-der.py -h
 usage: enc-ow-der.py [-h] -i INPUT [-b64] [-fchar] [-v]
 
