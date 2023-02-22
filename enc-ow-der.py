@@ -1,3 +1,4 @@
+#!python3
 import argparse as ap
 import base64
 from argparse import RawTextHelpFormatter
