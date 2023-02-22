@@ -1,5 +1,7 @@
-# enc-ow-der
-
+<div align="center">
+  <img height="550px" src="https://user-images.githubusercontent.com/28403617/220600629-9da7b084-4fbc-4212-b10e-d395a178a7f5.svg#gh-light-mode-only">
+  <img height="550px" src="https://user-images.githubusercontent.com/28403617/220600634-a43af6ba-fc67-4c47-981b-0c4e9c4aba7b.svg#gh-dark-mode-only">
+</div>
 
 ## What is this?
 
